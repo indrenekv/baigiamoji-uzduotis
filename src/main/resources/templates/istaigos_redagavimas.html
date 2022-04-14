@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Recepto redagavimas</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h1>įstaigos redagavimas</h1>
+    <hr>
+    <h2>Paredaguokite įstaigos duomenis</h2>
+
+    <form th:action="@{/admin/istaiga_ideta}" th:object="${matinimoIstaiga}" method="POST">
+        <input type="hidden" th:field="*{id}">
+        <input th:field="*{pavadinimas}" type="text"  placeholder="Įstaigos pavadinimas" class="form-control mb-4 col-4">
+        <input th:field="*{kodas}" type="number"  placeholder="Įstaigos kodas" class="form-control mb-4 col-4">
+        <input th:field="*{adresas}" type="text"  placeholder="Įstaigos adresas" class="form-control mb-4 col-4">
+        <button type="submit" class="btn btn-info col-2">Paredaguokite įstaigą</button>
+    </form>
+
+    <hr>
+
+    <a th:href="@{/}"> Grįžti atgal</a>
+</div>
+</body>
+</html>
